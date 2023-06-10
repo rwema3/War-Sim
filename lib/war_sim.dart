@@ -190,3 +190,15 @@ class Simulator {
     resolveRound(winner);
   }
 
+  PlayerState get winner =>
+      state.player1.deck.isEmpty ? state.player2 : state.player1;
+
+  void playGame() {
+    while (state.player1.hasCards && state.player2.hasCards) {
+      playRound();
+      // if (state.stats.roundCount % 100 == 0) {
+      //   printCardCounts(state);
+      // }
+    }
+  }
+}
