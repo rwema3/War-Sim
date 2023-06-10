@@ -62,3 +62,17 @@ class PlayerState {
   // Intentionally does not include board.
   int get availableCardCount => deck.length + discard.length;
   bool get hasCards => availableCardCount > 0;
+
+  void shuffleIfNeeded() {
+    if (deck.isEmpty) {
+      deck = [...discard];
+      discard.clear();
+      deck.shuffle();
+    }
+  }
+
+  void playCard() {
+    shuffleIfNeeded();
+    board.add(deck.removeLast());
+  }
+
