@@ -168,3 +168,18 @@ class Simulator {
       if (!p2.playCardIfPossible()) {
         return wonRoundDueToOutOfCards(p1);
       }
+
+      isWar = isSameRank(p1.lastPlayed, p2.lastPlayed);
+      if (isWar) {
+        // print(
+        //     'WAR: ${p1.name}: ${shortName(p1.lastPlayed)}, ${p2.name}: ${shortName(p2.lastPlayed)}');
+        state.stats.warCount++;
+        if (p1.playCardsIfPossible(rules.cardsPerWar) != rules.cardsPerWar) {
+          return wonRoundDueToOutOfCards(p2);
+        }
+        if (p2.playCardsIfPossible(rules.cardsPerWar) != rules.cardsPerWar) {
+          return wonRoundDueToOutOfCards(p1);
+        }
+      }
+    } while (isWar);
+
