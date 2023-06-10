@@ -183,3 +183,10 @@ class Simulator {
       }
     } while (isWar);
 
+    // Resolve the round
+    var winner = compare(p1.lastPlayed, p2.lastPlayed) > 0 ? p1 : p2;
+    // print(
+    //     '${winner.name}: ${shortName(p1.lastPlayed)} vs ${shortName(p2.lastPlayed)}');
+    resolveRound(winner);
+  }
+
