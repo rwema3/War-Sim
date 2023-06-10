@@ -1,0 +1,14 @@
+name: war_sim
+description: Simulate the card-game war and print stats.
+version: 1.0.0
+repository: https://github.com/eseidel/war_sim
+
+environment:
+  sdk: '>=2.19.0 <4.0.0'
+
+dependencies: 
+  stats: ^2.0.0
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
