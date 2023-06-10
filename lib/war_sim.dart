@@ -117,3 +117,15 @@ class GameState {
   Stats stats;
 
   GameState(this.rules, this.player1, this.player2, this.stats);
+
+  factory GameState.newGame(Rules rules) {
+    var deck = List.generate(52, (i) => i);
+    deck.shuffle();
+    var half = deck.length ~/ 2;
+    return GameState(
+        rules,
+        PlayerState('p1', rules, deck.sublist(0, half), [], []),
+        PlayerState('p2', rules, deck.sublist(half), [], []),
+        Stats());
+  }
+}
