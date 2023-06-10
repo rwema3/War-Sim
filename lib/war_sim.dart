@@ -23,3 +23,28 @@ typedef Card = int;
 String suit(Card card) {
   return ['Clubs', 'Diamonds', 'Hearts', 'Spades'][card ~/ 13];
 }
+
+String rank(Card card) {
+  return [
+    'Ace',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    'Jack',
+    'Queen',
+    'King'
+  ][card % 13];
+}
+
+int rankValue(Card card) => card % 13;
+String longName(Card card) => '${rank(card)} of ${suit(card)}';
+String shortName(Card card) => '${rank(card)[0]}${suit(card)[0]}';
+int compare(Card a, Card b) => rankValue(a) - rankValue(b);
+bool isSameRank(Card a, Card b) => rankValue(a) == rankValue(b);
+
