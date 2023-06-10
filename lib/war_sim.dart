@@ -109,3 +109,11 @@ class Stats {
   int warCount = 0;
   int roundCount = 0;
 }
+
+class GameState {
+  final Rules rules;
+  PlayerState player1;
+  PlayerState player2;
+  Stats stats;
+
+  GameState(this.rules, this.player1, this.player2, this.stats);
