@@ -129,3 +129,8 @@ class GameState {
         Stats());
   }
 }
+
+void printCardCounts(GameState state) {
+  print(
+      '${state.player1.name}: ${state.player1.availableCardCount} cards, ${state.player2.name}: ${state.player2.availableCardCount} cards');
+}
