@@ -76,3 +76,36 @@ class PlayerState {
     board.add(deck.removeLast());
   }
 
+  bool playCardIfPossible() {
+    if (availableCardCount > 0) {
+      playCard();
+      return true;
+    }
+    return false;
+  }
+
+  int playCardsIfPossible(int count) {
+    int count = 0;
+    for (var i = 0; i < count; i++) {
+      if (playCardIfPossible()) {
+        count++;
+      } else {
+        break;
+      }
+    }
+    return count;
+  }
+
+  List<Card> takeBoard() {
+    var result = [...board];
+    board.clear();
+    return result;
+  }
+
+  Card get lastPlayed => board.last;
+}
+
+class Stats {
+  int warCount = 0;
+  int roundCount = 0;
+}
