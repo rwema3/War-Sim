@@ -155,3 +155,16 @@ class Simulator {
     winner.discard.addAll(spoils);
   }
 
+  void playRound() {
+    var p1 = state.player1;
+    var p2 = state.player2;
+    bool isWar = false;
+    do {
+      state.stats.roundCount++;
+      // Assuming for now that failure to play a card during war is a loss.
+      if (!p1.playCardIfPossible()) {
+        return wonRoundDueToOutOfCards(p2);
+      }
+      if (!p2.playCardIfPossible()) {
+        return wonRoundDueToOutOfCards(p1);
+      }
