@@ -142,3 +142,16 @@ class Simulator {
   Simulator(this.rules, this.state);
 
   Simulator.newGame(this.rules) : state = GameState.newGame(rules);
+
+  void wonRoundDueToOutOfCards(PlayerState winner) {
+    // var loser = winner == state.player1 ? state.player2 : state.player1;
+    // print(
+    //     '${loser.name}: ran out of cards during war. ${winner.name} wins the war.');
+    resolveRound(winner);
+  }
+
+  void resolveRound(PlayerState winner) {
+    var spoils = [...state.player1.takeBoard(), ...state.player2.takeBoard()];
+    winner.discard.addAll(spoils);
+  }
+
