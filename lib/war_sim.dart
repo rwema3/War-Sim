@@ -48,3 +48,17 @@ String shortName(Card card) => '${rank(card)[0]}${suit(card)[0]}';
 int compare(Card a, Card b) => rankValue(a) - rankValue(b);
 bool isSameRank(Card a, Card b) => rankValue(a) == rankValue(b);
 
+class PlayerState {
+  final String name;
+  final Rules rules;
+  List<Card> deck;
+  List<Card> discard;
+  List<Card> board;
+
+  PlayerState(this.name, this.rules, this.deck, this.discard, this.board);
+
+  List<Card> get playerDeck => deck + discard;
+
+  // Intentionally does not include board.
+  int get availableCardCount => deck.length + discard.length;
+  bool get hasCards => availableCardCount > 0;
