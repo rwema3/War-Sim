@@ -134,3 +134,11 @@ void printCardCounts(GameState state) {
   print(
       '${state.player1.name}: ${state.player1.availableCardCount} cards, ${state.player2.name}: ${state.player2.availableCardCount} cards');
 }
+
+class Simulator {
+  final Rules rules;
+  final GameState state;
+
+  Simulator(this.rules, this.state);
+
+  Simulator.newGame(this.rules) : state = GameState.newGame(rules);
