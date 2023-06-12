@@ -24,3 +24,4 @@ List<Stats> runSimulations(Rules rules, int count) {
 
 void runSimForRules(Rules rules, String name, {int count = 50000}) {
   print("Simulating with rules \"$name\" N=$count");
+  final gameStats = runSimulations(rules, count);
