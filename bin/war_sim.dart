@@ -8,4 +8,5 @@ void printAggregateStatistics(List<Stats> gameStats) {
     print("$label: ${rounded.median} (median)");
   }
 
-  printStats("Rounds", gameStats.map((stats) => stats.roundCoun
+  printStats("Rounds", gameStats.map((stats) => stats.roundCount));
+  printStats("Wars", gameStats.map((stats) => stats.warCount));
