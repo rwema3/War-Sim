@@ -31,4 +31,3 @@ void runSimForRules(Rules rules, String name, {int count = 50000}) {
 void main(List<String> arguments) {
   runSimForRules(Rules(cardsPerWar: 1), "Cards per War = 1");
   runSimForRules(Rules(cardsPerWar: 3), "Cards per War = 3");
-  runSimForRules(Rules(cardsPerWar: 0), "Cards per War = 0");
