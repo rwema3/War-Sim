@@ -10,3 +10,5 @@ void printAggregateStatistics(List<Stats> gameStats) {
 
   printStats("Rounds", gameStats.map((stats) => stats.roundCount));
   printStats("Wars", gameStats.map((stats) => stats.warCount));
+}
+
