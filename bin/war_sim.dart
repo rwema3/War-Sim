@@ -19,3 +19,4 @@ List<Stats> runSimulations(Rules rules, int count) {
     sim.playGame();
     gameStats.add(sim.state.stats);
   }
+  return gameStats;
