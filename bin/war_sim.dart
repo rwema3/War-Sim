@@ -12,3 +12,5 @@ void printAggregateStatistics(List<Stats> gameStats) {
   printStats("Wars", gameStats.map((stats) => stats.warCount));
 }
 
+List<Stats> runSimulations(Rules rules, int count) {
+  
