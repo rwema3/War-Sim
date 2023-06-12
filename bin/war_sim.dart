@@ -13,4 +13,5 @@ void printAggregateStatistics(List<Stats> gameStats) {
 }
 
 List<Stats> runSimulations(Rules rules, int count) {
+  final gameStats = <Stats>[];
   
