@@ -26,3 +26,6 @@ void runSimForRules(Rules rules, String name, {int count = 50000}) {
   print("Simulating with rules \"$name\" N=$count");
   final gameStats = runSimulations(rules, count);
   printAggregateStatistics(gameStats);
+}
+
+void main(List<String> arguments) {
