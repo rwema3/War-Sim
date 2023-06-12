@@ -7,3 +7,5 @@ void printAggregateStatistics(List<Stats> gameStats) {
     var rounded = stats.withPrecision(3);
     print("$label: ${rounded.median} (median)");
   }
+
+  printStats("Rounds", gameStats.map((stats) => stats.roundCoun
