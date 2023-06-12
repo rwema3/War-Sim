@@ -6,3 +6,4 @@ void printAggregateStatistics(List<Stats> gameStats) {
     var stats = stats_package.Stats.fromData(values);
     var rounded = stats.withPrecision(3);
     print("$label: ${rounded.median} (median)");
+  }
