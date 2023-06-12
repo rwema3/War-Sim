@@ -17,4 +17,5 @@ List<Stats> runSimulations(Rules rules, int count) {
   for (int i = 0; i < count; i++) {
     final sim = Simulator.newGame(rules);
     sim.playGame();
-   
+    gameStats.add(sim.state.stats);
+  }
