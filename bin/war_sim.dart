@@ -22,3 +22,4 @@ List<Stats> runSimulations(Rules rules, int count) {
   return gameStats;
 }
 
+void runSimForRules(Rules rules, String name, {int count = 50000}) {
